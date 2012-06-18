@@ -1,0 +1,30 @@
+﻿<Window x:Class="MMDisco.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Disco Time!" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="622" Width="1062" DataContext="{Binding}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230*" />
+            <ColumnDefinition Width="250*" />
+            <ColumnDefinition Width="250*" />
+            <ColumnDefinition Width="164*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47" />
+            <RowDefinition Height="268*" />
+            <RowDefinition Height="268*" />
+        </Grid.RowDefinitions>
+        <TextBox Margin="0,12,178,8" Name="searchBox" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="209" TextChanged="textBox1_TextChanged" />
+        <ComboBox Height="27" HorizontalAlignment="Left" Margin="118,12,0,0" Name="comboBox1" VerticalAlignment="Top" Width="115" IsEditable="False" Grid.Column="1" DataContext="{Binding}" />
+        <ListBox Grid.Row="1" Name="releaseList" SelectionChanged="releaseList_SelectionChanged" ItemsSource="{Binding}" Grid.RowSpan="2" />
+        <ListBox Grid.Column="3" Grid.Row="1" Name="listBox1" Grid.RowSpan="2" />
+        <Button Content="Search!" Height="27" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" IsDefault="True" />
+        <Image Grid.Column="1" Grid.Row="1" Height="250" HorizontalAlignment="Center" Name="releaseCoverArt" Stretch="Fill" VerticalAlignment="Center" Width="250" ImageFailed="image1_ImageFailed" MinWidth="250" MinHeight="250" Source="{Binding Path=}" />
+        <Label Content="Album" Grid.Column="2" Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="5,12,0,0" Name="AlbumLabel" VerticalAlignment="Top" />
+        <Label Content="Artist" Grid.Column="2" Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="4,56,0,0" Name="ArtistLabel" VerticalAlignment="Top" />
+        <ListBox Grid.Column="1" Grid.Row="2" Name="releaseTrackList" Margin="0,25,0,0" />
+        <ListBox Name="mmTrackList" Grid.Column="2" Grid.Row="2" Margin="0,25,0,0" />
+        <Label Content="Discogs Track List" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" />
+        <Label Content="MediaMonkey Track List" HorizontalAlignment="Left" Name="label2" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2" />
+    </Grid>
+</Window>
